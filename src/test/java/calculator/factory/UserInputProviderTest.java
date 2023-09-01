@@ -6,7 +6,7 @@ import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
-class UserInputProviderTest {  //TODO
+class UserInputProviderTest {
 
     @Test
     void getValidFirstIntInput() {
@@ -20,9 +20,22 @@ class UserInputProviderTest {  //TODO
 
     @Test
     void getValidSymbolInput() {
+        String data = "/";
+        ByteArrayInputStream in = new ByteArrayInputStream(data.getBytes());
+        System.setIn(in);
+        Scanner scanner = new Scanner(System.in);
+        String expected = "/";
+        assertEquals(expected, new UserInputProvider().getValidSymbolInput(scanner));
     }
 
     @Test
     void getValidSecondIntInput() {
+        String data = "5";
+        String symbol = "+";
+        ByteArrayInputStream in = new ByteArrayInputStream(data.getBytes());
+        System.setIn(in);
+        Scanner scanner = new Scanner(System.in);
+        Integer expected = 5;
+        assertEquals(expected, new UserInputProvider().getValidSecondIntInput(scanner,symbol));
     }
 }
