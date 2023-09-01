@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class UserInputProvider {
 
     public int getValidIntInput(Scanner scanner) {
-        Integer intResult;
+        int intResult;
 
         while (!scanner.hasNextInt()) {
             System.out.println("Invalid value, must be a integer value");
@@ -31,9 +31,9 @@ public class UserInputProvider {
         while (!symbolList.contains(stringResult = scanner.next())) {
             System.out.println("Invalid symbol, " +
                     "please choose one of the symbol ");
-            for (int i = 0; i < symbolList.size(); i++) {
+            for (String s : symbolList) {
                 {
-                    System.out.println(symbolList.get(i));
+                    System.out.println(s);
                 }
             }
         }
@@ -42,7 +42,7 @@ public class UserInputProvider {
     }
 
     public int getValidSecondIntInput(Scanner scanner, String symbol) {
-        Integer intSecondResult;
+        int intSecondResult;
 
         while (!scanner.hasNextInt()) {
             System.out.println("Invalid value, must be a integer value");

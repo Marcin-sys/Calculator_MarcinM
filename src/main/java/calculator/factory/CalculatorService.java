@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class CalculatorService {
     private UserInputProvider input = new UserInputProvider();
-    private CalculatorFactory calculatorFactory = new CalculatorFactory();
+    private final CalculatorFactory calculatorFactory = new CalculatorFactory();
     private final SystemPrinter systemPrinter = new TextPrinter();
 
-    public CalculatorService(UserInputProvider input) {
+    public CalculatorService(UserInputProvider input) {         //for testing
         this.input = input;
     }
 
@@ -35,7 +35,8 @@ public class CalculatorService {
 
             result = calculatorFactory.calculatorFactory(choiceFirstInteger, choiceSymbolString, choiceSecondInteger);
 
-            System.out.println(choiceFirstInteger + choiceSymbolString + choiceSecondInteger + "= " + result);
+            systemPrinter.printString(choiceFirstInteger + choiceSymbolString + choiceSecondInteger + "= " + result);
+
 
         } catch (Exception e) {
             e.printStackTrace();
