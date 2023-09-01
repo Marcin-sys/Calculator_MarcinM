@@ -22,7 +22,7 @@ public class CalculatorService {
 
         try (Scanner sc = new Scanner(System.in)) {
             System.out.println("Write first number to calculator, number must be Integer");
-            choiceFirstInteger = input.getValidIntInput(sc);
+            choiceFirstInteger = input.getValidFirstIntInput(sc);
             System.out.println("First number is: " + choiceFirstInteger);
 
             System.out.println("Choose symbol for calculating:");
@@ -39,7 +39,7 @@ public class CalculatorService {
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace();  //TODO
         }
     }
 }

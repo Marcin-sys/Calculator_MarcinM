@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class UserInputProvider {
 
-    public int getValidIntInput(Scanner scanner) {
+    public int getValidFirstIntInput(Scanner scanner) {
         int intResult;
 
         while (!scanner.hasNextInt()) {
