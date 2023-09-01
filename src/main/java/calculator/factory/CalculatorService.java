@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CalculatorService {
     private UserInputProvider input = new UserInputProvider();
-
+    private CalculatorFactory calculatorFactory = new CalculatorFactory();
     private final SystemPrinter systemPrinter = new TextPrinter();
 
     public CalculatorService(UserInputProvider input) {
@@ -18,22 +18,24 @@ public class CalculatorService {
         int choiceFirstInteger;
         String choiceSymbolString;
         int choiceSecondInteger;
+        float result;
+
         try (Scanner sc = new Scanner(System.in)) {
             System.out.println("Write first number to calculator, number must be Integer");
             choiceFirstInteger = input.getValidIntInput(sc);
-            System.out.println("number is: " + choiceFirstInteger);
+            System.out.println("First number is: " + choiceFirstInteger);
 
             System.out.println("Choose symbol for calculating:");
             choiceSymbolString = input.getValidSymbolInput(sc);
             System.out.println("symbol is: " + choiceSymbolString);
 
-            System.out.println("Write first number to calculator, number must be Integer");
-            choiceSecondInteger = input.getValidIntInput(sc);
-            System.out.println("number is: " + choiceSecondInteger);
+            System.out.println("Write second number to calculator, number must be Integer");
+            choiceSecondInteger = input.getValidSecondIntInput(sc,choiceSymbolString);
+            System.out.println("Second number is: " + choiceSecondInteger);
 
+            result = calculatorFactory.calculatorFactory(choiceFirstInteger,choiceSymbolString,choiceSecondInteger);
 
-
-            System.out.println(choiceFirstInteger + choiceSymbolString + choiceSecondInteger);
+            System.out.println(choiceFirstInteger + choiceSymbolString + choiceSecondInteger+"= "+result);
 
         } catch (Exception e) {
             e.printStackTrace();

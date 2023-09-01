@@ -1,8 +1,8 @@
 package calculator.factory;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class UserInputProvider {
@@ -41,4 +41,20 @@ public class UserInputProvider {
         return stringResult;
     }
 
-}
+        public int getValidSecondIntInput(Scanner scanner,String symbol) {
+            Integer intSecondResult;
+
+            while (!scanner.hasNextInt()) {
+                System.out.println("Invalid value, must be a integer value");
+                scanner.next();
+            }
+            intSecondResult = scanner.nextInt();
+            if (Objects.equals(symbol,"/")){
+                while (intSecondResult == 0){
+                    System.out.println("You can't divide by 0, choose another integer value");
+                    intSecondResult = scanner.nextInt();
+                }
+            }
+            return intSecondResult;
+        }
+    }
