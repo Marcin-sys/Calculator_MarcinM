@@ -18,7 +18,7 @@ public class UserInputProvider {
         return intResult;
     }
 
-    public String getValidSymbolInput(Scanner scanner){
+    public String getValidSymbolInput(Scanner scanner) {
         String stringResult;
 
         List<String> symbolList = new ArrayList<>();
@@ -28,7 +28,7 @@ public class UserInputProvider {
         symbolList.add("/");
 
 
-        while (!symbolList.contains(stringResult=scanner.next())) {
+        while (!symbolList.contains(stringResult = scanner.next())) {
             System.out.println("Invalid symbol, " +
                     "please choose one of the symbol ");
             for (int i = 0; i < symbolList.size(); i++) {
@@ -41,20 +41,20 @@ public class UserInputProvider {
         return stringResult;
     }
 
-        public int getValidSecondIntInput(Scanner scanner,String symbol) {
-            Integer intSecondResult;
+    public int getValidSecondIntInput(Scanner scanner, String symbol) {
+        Integer intSecondResult;
 
-            while (!scanner.hasNextInt()) {
-                System.out.println("Invalid value, must be a integer value");
-                scanner.next();
-            }
-            intSecondResult = scanner.nextInt();
-            if (Objects.equals(symbol,"/")){
-                while (intSecondResult == 0){
-                    System.out.println("You can't divide by 0, choose another integer value");
-                    intSecondResult = scanner.nextInt();
-                }
-            }
-            return intSecondResult;
+        while (!scanner.hasNextInt()) {
+            System.out.println("Invalid value, must be a integer value");
+            scanner.next();
         }
+        intSecondResult = scanner.nextInt();
+        if (Objects.equals(symbol, "/")) {
+            while (intSecondResult == 0) {
+                System.out.println("You can't divide by 0, choose another integer value");
+                intSecondResult = scanner.nextInt();
+            }
+        }
+        return intSecondResult;
     }
+}

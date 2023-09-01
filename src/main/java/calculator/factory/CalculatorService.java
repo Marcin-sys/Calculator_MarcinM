@@ -30,12 +30,12 @@ public class CalculatorService {
             System.out.println("symbol is: " + choiceSymbolString);
 
             System.out.println("Write second number to calculator, number must be Integer");
-            choiceSecondInteger = input.getValidSecondIntInput(sc,choiceSymbolString);
+            choiceSecondInteger = input.getValidSecondIntInput(sc, choiceSymbolString);
             System.out.println("Second number is: " + choiceSecondInteger);
 
-            result = calculatorFactory.calculatorFactory(choiceFirstInteger,choiceSymbolString,choiceSecondInteger);
+            result = calculatorFactory.calculatorFactory(choiceFirstInteger, choiceSymbolString, choiceSecondInteger);
 
-            System.out.println(choiceFirstInteger + choiceSymbolString + choiceSecondInteger+"= "+result);
+            System.out.println(choiceFirstInteger + choiceSymbolString + choiceSecondInteger + "= " + result);
 
         } catch (Exception e) {
             e.printStackTrace();
