@@ -21,9 +21,9 @@ class CalculatorServiceTest { //TODO
 
         calculatorService.calculatorMenu();
 
-//        String expected = "2+2= 4.0";
+        String expected = "2+2= 4.0";
 
-        Mockito.verify(systemPrinter).printString(Mockito.any());
+        Mockito.verify(systemPrinter).printString(expected);
 
     }
 }
