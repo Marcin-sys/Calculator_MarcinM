@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class CalculatorService {
     private UserInputProvider input = new UserInputProvider();
     private final CalculatorFactory calculatorFactory = new CalculatorFactory();
-    private final SystemPrinter systemPrinter = new TextPrinter();
+    private SystemPrinter systemPrinter = new TextPrinter();
 
-    public CalculatorService(UserInputProvider input) {         //for testing
+    public CalculatorService(UserInputProvider input,SystemPrinter systemPrinter) {         //for testing
         this.input = input;
+        this.systemPrinter = systemPrinter;
+
     }
 
     public CalculatorService() {
