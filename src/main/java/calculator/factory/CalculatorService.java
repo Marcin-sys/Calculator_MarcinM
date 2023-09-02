@@ -35,7 +35,8 @@ public class CalculatorService {
 
             result = calculatorFactory.calculatorFactory(choiceFirstInteger, choiceSymbolString, choiceSecondInteger);
 
-            systemPrinter.printString(choiceFirstInteger + choiceSymbolString + choiceSecondInteger + "= " + result);
+            systemPrinter.printString(choiceFirstInteger + choiceSymbolString +
+                    choiceSecondInteger + "= " + result);
 
 
         } catch (Exception e) {

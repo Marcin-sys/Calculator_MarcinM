@@ -7,6 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculatorFactoryTest {
 
     @Test
-    void calculatorFactory() {      //TODO
+    void calculatorFactory() {
+        int firstInteger = 10;
+        String symbol = "/";
+        int secondInteger = 5;
+        Float expected = 2F;
+        assertEquals(expected, new CalculatorFactory().calculatorFactory(firstInteger, symbol, secondInteger));
+
     }
 }
