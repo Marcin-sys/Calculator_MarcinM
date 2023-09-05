@@ -6,7 +6,7 @@ public class CalculatorService {
     private final CalculatorFactory calculatorFactory = new CalculatorFactory();
     private SystemPrinter systemPrinter = new TextPrinter();
 
-    public CalculatorService(UserInputProvider input,SystemPrinter systemPrinter) {         //for testing
+    public CalculatorService(UserInputProvider input,SystemPrinter systemPrinter) {
         this.input = input;
         this.systemPrinter = systemPrinter;
 
@@ -41,7 +41,7 @@ public class CalculatorService {
 
 
         } catch (Exception e) {
-            e.printStackTrace();  //TODO
+            e.printStackTrace();
         }
     }
 }

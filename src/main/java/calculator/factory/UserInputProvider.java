@@ -22,7 +22,6 @@ public class UserInputProvider {
         int intResult;
 
         while (!scanner.hasNextInt()) {
-            System.out.println(scanner);
             System.out.println("Invalid value, must be a integer value");
             scanner.nextInt();
         }
@@ -59,7 +58,7 @@ public class UserInputProvider {
 
         while (!scanner.hasNextInt()) {
             System.out.println("Invalid value, must be a integer value");
-            scanner.next();
+            scanner.nextInt();
         }
         intSecondResult = scanner.nextInt();
         if (Objects.equals(symbol, "/")) {

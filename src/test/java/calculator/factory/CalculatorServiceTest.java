@@ -3,7 +3,7 @@ package calculator.factory;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-class CalculatorServiceTest { //TODO
+class CalculatorServiceTest {
 
     @Test
     void calculatorMenu() {
