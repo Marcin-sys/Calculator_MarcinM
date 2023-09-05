@@ -7,18 +7,31 @@ import java.util.Scanner;
 
 public class UserInputProvider {
 
-    public int getValidFirstIntInput(Scanner scanner) {
+    private final Scanner scanner;
+
+
+    public UserInputProvider() {
+        this(new Scanner(System.in));
+    }
+
+    public UserInputProvider(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+    public int getValidFirstIntInput() {
         int intResult;
 
         while (!scanner.hasNextInt()) {
+            System.out.println(scanner);
             System.out.println("Invalid value, must be a integer value");
-            scanner.next();
+            scanner.nextInt();
         }
+
         intResult = scanner.nextInt();
         return intResult;
     }
 
-    public String getValidSymbolInput(Scanner scanner) {
+    public String getValidSymbolInput() {
         String stringResult;
 
         List<String> symbolList = new ArrayList<>();
@@ -41,7 +54,7 @@ public class UserInputProvider {
         return stringResult;
     }
 
-    public int getValidSecondIntInput(Scanner scanner, String symbol) {
+    public int getValidSecondIntInput(String symbol) {
         int intSecondResult;
 
         while (!scanner.hasNextInt()) {

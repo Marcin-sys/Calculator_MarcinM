@@ -13,9 +13,9 @@ class CalculatorServiceTest { //TODO
 
         String choiceSymbolString = "+";
 
-        Mockito.when(input.getValidFirstIntInput(Mockito.any())).thenReturn(2);
-        Mockito.when(input.getValidSymbolInput(Mockito.any())).thenReturn(choiceSymbolString);
-        Mockito.when(input.getValidSecondIntInput(Mockito.any(), Mockito.any())).thenReturn(2);
+        Mockito.when(input.getValidFirstIntInput()).thenReturn(2);
+        Mockito.when(input.getValidSymbolInput()).thenReturn(choiceSymbolString);
+        Mockito.when(input.getValidSecondIntInput(Mockito.any())).thenReturn(2);
 
         CalculatorService calculatorService = new CalculatorService(input, systemPrinter);
 

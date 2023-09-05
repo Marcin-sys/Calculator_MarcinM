@@ -1,6 +1,5 @@
 package calculator.factory;
 
-import java.util.Scanner;
 
 public class CalculatorService {
     private UserInputProvider input = new UserInputProvider();
@@ -22,17 +21,17 @@ public class CalculatorService {
         int choiceSecondInteger;
         float result;
 
-        try (Scanner sc = new Scanner(System.in)) {
+        try {
             System.out.println("Write first number to calculator, number must be Integer");
-            choiceFirstInteger = input.getValidFirstIntInput(sc);
+            choiceFirstInteger = input.getValidFirstIntInput();
             System.out.println("First number is: " + choiceFirstInteger);
 
             System.out.println("Choose symbol for calculating:");
-            choiceSymbolString = input.getValidSymbolInput(sc);
+            choiceSymbolString = input.getValidSymbolInput();
             System.out.println("symbol is: " + choiceSymbolString);
 
             System.out.println("Write second number to calculator, number must be Integer");
-            choiceSecondInteger = input.getValidSecondIntInput(sc, choiceSymbolString);
+            choiceSecondInteger = input.getValidSecondIntInput(choiceSymbolString);
             System.out.println("Second number is: " + choiceSecondInteger);
 
             result = calculatorFactory.calculatorFactory(choiceFirstInteger, choiceSymbolString, choiceSecondInteger);
